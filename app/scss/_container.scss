@@ -1,0 +1,77 @@
+@mixin card($color) {
+  width: 307px;
+  height: 490px;
+  padding: 47px 49px;
+  background-color: $color;
+  .btn {
+    color: $color;
+  }
+}
+.main {
+  width: 100%;
+  height: auto;
+  padding: 120px 0px;
+  background-color: $vlGray;
+}
+.container {
+  width: 921px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  .orangeBox {
+    @include card($brightOrange);
+    border-radius: 10px 0px 0px 10px;
+  }
+  .dCyanBox {
+    @include card($darkCyan);
+  }
+  .vdCyanBox {
+    @include card($veryDarkCyan);
+    border-radius: 0px 10px 10px 0px;
+  }
+}
+.box {
+  h2 {
+    font-family: "Big Shoulders Display", cursive;
+    color: $vlGray;
+    font-size: 34px;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+  p {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: $transparentWhite;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  a {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 65px;
+    padding: 12px 30px;
+    border-radius: 50px;
+    background-color: $vlGray;
+    border: 2px solid transparent;
+  }
+  .btn:hover {
+    background-color: transparent;
+    border-color: $vlGray;
+    color: $vlGray;
+    transition-duration: 0.3s;
+  }
+}
+
+@media screen and (max-width: 1010px) {
+  .container {
+    flex-direction: column;
+    .orangeBox {
+      border-radius: 10px 10px 0 0;
+    }
+    .vdCyanBox {
+      border-radius: 0px 0px 10px 10px;
+    }
+  }
+  .box {
+    margin: 0 auto;
+  }
+}
